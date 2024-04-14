@@ -1,0 +1,14 @@
+.logo {
+    position: fixed;
+    top: 30px;
+    width: 48px;
+    height: 48px;
+}
+
+#github {
+    right: 10px;
+}
+
+#cwk {
+    right: 65px;
+}
