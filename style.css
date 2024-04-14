@@ -5,6 +5,14 @@
     height: 48px;
 }
 
+#home {
+    position: fixed;
+    top: 10px;
+    width: 64px;
+    height: 64px;
+    left: 25px;
+}
+
 #github {
     right: 10px;
 }
