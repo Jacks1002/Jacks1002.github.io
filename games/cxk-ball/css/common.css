@@ -48,7 +48,7 @@ a:hover{text-decoration:none;}
 .icon{background:url(../images/icon.png) no-repeat;}
 /*---------------------------  icon end  ---------------------------*/
 /*---------------------------  代码展示框 start  ---------------------------*/
-h1{width: 960px;margin:0 auto 20px;padding-top:20px;font-size: 18px;line-height: 25px;font-weight: normal;}
+/* h1{width: 960px;margin:0 auto 20px;padding-top:20px;font-size: 18px;line-height: 25px;font-weight: normal;} */
 h2{margin: 25px 0;font-size: 20px;}
 .title{font-weight: 700;font-size: 24px;text-align: center;}
 .code{width:960px;border: 1px dashed #e2e2e2;padding: 10px 5px;margin: 25px auto;font-size: 16px;background: #eee;}
