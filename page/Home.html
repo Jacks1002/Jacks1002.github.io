@@ -22,12 +22,14 @@
                 </td>
 
                 <td style="width: 34%;">
-                    <img src="../image/math.png" alt="math" style="width: 256px; height: 256px"><br>
-                    <h3 style="color: red;">(敬请期待)</h3>
+                    <a href="#" onclick="alert('敬請期待！')">
+                        <img src="../image/math.png" alt="math" style="width: 256px; height: 256px"><br>
+                        <h3 style="color: red;">(敬请期待)</h3>
+                    </a>
                 </td>
 
                 <td>
-                    <a href="https://drive.google.com/file/d/1gGwI2vKuDT7z3Go1R5NJ6yGkXR0gyf1r/view?usp=sharing" target="_blank">
+                    <a href="#" onclick="gotodrive()">
                         <img src="../image/死神vs火影.png" alt=" 死神vs火影" style="width: 256px; height: 256px"><br>
                         <h3>死神vs火影</h3>
                     </a>
@@ -35,10 +37,14 @@
                 </td>
             </tr>
         </table>
-        <div style="margin-top: 0px;">
-            <p></p>
-        </div>
-        
-
     </body>
+    
+    <script>
+        function gotodrive() {
+            if (confirm("是否前往Google雲端硬碟下載游戲包？")==true) {
+                window.open("https://drive.google.com/file/d/1gGwI2vKuDT7z3Go1R5NJ6yGkXR0gyf1r/view?usp=sharing","_blank")
+            }
+        }
+    </script>
+
 </html>
