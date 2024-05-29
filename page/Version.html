@@ -1,14 +1,30 @@
 <html lang="zh-HK">
     <body style="overflow: hidden;">
-        <h5 style="color: red;text-align: center;" onclick="showinfo()">- Version 2.0.3 -</h5>	
+        <h5 style="color: red;text-align: center; caret-color: transparent;user-select: none;" onclick="showinfo(this)">- Version 2.0.4 -</h5>	
     </body>
 
     <script>
-        let x = 0
-        function showinfo(){
+        let x = y = 0
+        function showinfo(id) {
             x += 1
-            if(x == 100){
-                alert("恭喜你發現了彩蛋~\n你的獎勵是一隻鷄腿~\n請記得找我兌獎哦~\n先到先得~\n獲獎者： 暫無\n \n本站始於2024年4月14日~\n本站目前版本為 2.0.3 ~");
+            y += 1
+            if (x==1) {
+                id.innerHTML = "- 2.0.4 Version -"
+            }
+            else if (x==2) {
+                id.innerHTML = "- 版本 2.0.4 -"
+            }
+            else if (x==3) {
+                id.innerHTML = "- 2.0.4 版本 -"
+            }
+            else {
+                
+                id.innerHTML = "- Version 2.0.4 -"
+                x = 0
+            }
+
+            if(y == 100){
+                alert("恭喜你發現了彩蛋~\n你的獎勵是一隻鷄腿~\n請記得找我兌獎哦~\n先到先得~\n獲獎者： 暫無\n \n本站始於2024年4月14日~\n本站目前版本為 2.0.4 ~");
             }
         }
     </script>
