@@ -60,9 +60,10 @@
                         '已為您打開下載頁面',
                         {
                             icon: 1
-                        }
+                        },
                     );
                     window.open("https://drive.google.com/file/d/1gGwI2vKuDT7z3Go1R5NJ6yGkXR0gyf1r/view?usp=sharing", "_blank");
+                    layer.close();
                 },
 
                 function() { // 點擊取消
@@ -72,6 +73,7 @@
                             icon: 2
                         }
                     );
+                    layer.close();
                 }
             );
         }
