@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
-	<head>
-		<title>⭐星の小網站⭐</title>
-		<link rel="icon" href="image/icon.jpg">
-		<link rel="stylesheet" href="layui/css/layui.css">
-	</head>
-	<script src="layui/layui.js"></script>
-	<style>
-		body, html {
+
+<head>
+	<title>⭐星の小網站⭐</title>
+	<link rel="icon" href="image/icon.jpg">
+	<link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<script src="layui/layui.js"></script>
+<style>
+	body,
+	html {
 		height: 100%;
 		margin: 0;
 		padding: 0;
-		}
-		.wrapper {
+	}
+
+	.wrapper {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		}
-		.content {
+	}
+
+	.content {
 		flex: 1;
-		}
-		iframe {
+	}
+
+	iframe {
 		border: none;
 		width: 100%;
-		}
-	</style>
-	<body>
+	}
+</style>
+
+<body>
 	<div class="wrapper">
 		<iframe src="page/Navbar.html" height="86px" name="Navbar"></iframe>
 		<div class="content">
-		<iframe src="page/Home.html" height="100%" name="Home"></iframe>
+			<iframe src="page/Home.html" height="100%" name="Home"></iframe>
 		</div>
 		<iframe src="page/Version.html" height="32px" name="Version"></iframe>
 	</div>
-	</body>
+</body>
+
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+	<link rel="icon" href="image/icon.jpg">
+	<title>⭐星の小網站⭐</title>
+</head>
+<frameset rows="90px ,*, 50px" border=0>
+	<frame width="100%" src="page/Navbar.html" name="Navbar" />
+	<frame width="100%" height="100%" src="page/Home.html" name="Home" />
+	<frame src="page/Version.html" name="Version" />
+</frameset>
+
+</html> -->
