@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
-<head>
-  <link rel="icon" href="image/icon.jpg">
-  <title>⭐星の小網站⭐</title>
-  <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    .wrapper {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .content {
-      flex: 1;
-    }
-    iframe {
-      border: none;
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrapper">
-    <iframe src="page/Navbar.html" height="90px" name="Navbar"></iframe>
-    <div class="content">
-      <iframe src="page/Home.html" height="100%" name="Home"></iframe>
-    </div>
-    <iframe src="page/Version.html" height="50px" name="Version"></iframe>
-  </div>
-</body>
+	<head>
+		<title>⭐星の小網站⭐</title>
+		<link rel="icon" href="image/icon.jpg">
+		<link rel="stylesheet" href="layui/css/layui.css">
+	</head>
+	<script src="layui/layui.js"></script>
+	<style>
+		body, html {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		}
+		.wrapper {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		}
+		.content {
+		flex: 1;
+		}
+		iframe {
+		border: none;
+		width: 100%;
+		}
+	</style>
+	<body>
+	<div class="wrapper">
+		<iframe src="page/Navbar.html" height="90px" name="Navbar"></iframe>
+		<div class="content">
+		<iframe src="page/Home.html" height="100%" name="Home"></iframe>
+		</div>
+		<iframe src="page/Version.html" height="50px" name="Version"></iframe>
+	</div>
+	</body>
 </html>
