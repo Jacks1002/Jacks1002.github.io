@@ -47,11 +47,33 @@
     <script>
         const layer = layui.layer;
         function gotodrive() {
-            window.parent.layer.confirm('是否前往Google雲端硬碟下載游戲包？', {icon: 3}, function() {
-                window.parent.layer.msg('正在為您打開下載頁面', {icon: 1});
+            window.parent.layer.confirm(
+                '是否前往Google雲端硬碟下載游戲包？',
+                {
+                    icon: 3,
+                    btn: ['前往', '取消'],
+                    skin: 'layui-layer-molv',
+                },
+
+                function() { // 點擊前往
+                window.parent.layer.msg(
+                    '已為您打開下載頁面',
+                    {
+                        icon: 1
+                    }
+                );
                 window.open("https://drive.google.com/file/d/1gGwI2vKuDT7z3Go1R5NJ6yGkXR0gyf1r/view?usp=sharing", "_blank");
-                close();
-            });
+                },
+
+                function() { // 點擊取消
+                window.parent.layer.msg(
+                    window.parent.layer.msg(
+                        '已取消',
+                        {
+                            icon: 2
+                        }
+                )
+            );
         }
     </script>
     
