@@ -16,7 +16,7 @@
         }
     </style>
     <body>
-        <table style="width: 100%; height: 100%;" border="0">
+        <table style="width: 100%; height: 100%;">
             <tr style="text-align: center;">
 
                 <td style="width: 33%;">
@@ -66,13 +66,13 @@
                 },
 
                 function() { // 點擊取消
-                window.parent.layer.msg(
                     window.parent.layer.msg(
                         '已取消',
                         {
                             icon: 2
                         }
-                )
+                    );
+                }
             );
         }
     </script>
