@@ -1,9 +1,21 @@
 <html lang="zh-HK">
-    <body style="overflow: hidden;">
+    <head>
+        <link rel="stylesheet" href="../layui/css/layui.css">
+    </head>
+    <style>
+        body {
+            overflow: hidden;
+            background: linear-gradient(220.55deg, #B7DCFF 0%, #FFA4F6 100%);
+        }
+            
+    </style>
+    <body>
         <h5 style="color: red;text-align: center; caret-color: transparent;user-select: none;" onclick="showinfo(this)">- Version 2.0.4 -</h5>	
     </body>
 
+    <script src="../layui/layui.js"></script>
     <script>
+        const layer = layui.layer;
         let x = y = 0
         function showinfo(id) {
             x += 1
@@ -23,8 +35,16 @@
                 x = 0
             }
 
-            if(y == 100){
-                alert("恭喜你發現了彩蛋~\n你的獎勵是一隻鷄腿~\n請記得找我兌獎哦~\n先到先得~\n獲獎者： 暫無\n \n本站始於2024年4月14日~\n本站目前版本為 2.0.4 ~");
+            if(y == 5){
+                window.parent.layer.open({
+                    skin: 'layui-layer-molv',
+                    type: 1,
+                    area: ['500px', '300px'], 
+                    title: '彩蛋',
+                    shade: 0.5,
+                    anim: 2,
+                    content: '<pre style="padding: 35">恭喜你發現了彩蛋~\n你的獎勵是一隻鷄腿~\n請記得找我兌獎哦~\n先到先得~\n獲獎者： 暫無\n \n本站始於2024年4月14日~\n本站目前版本為 2.0.4 ~</pre>'
+                });
             }
         }
     </script>
