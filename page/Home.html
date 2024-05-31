@@ -48,8 +48,9 @@
         const layer = layui.layer;
         function gotodrive() {
             window.parent.layer.confirm('是否前往Google雲端硬碟下載游戲包？', {icon: 3}, function() {
-                layer.msg('正在為您打開下載頁面', {icon: 1});
+                window.parent.layer.msg('正在為您打開下載頁面', {icon: 1});
                 window.open("https://drive.google.com/file/d/1gGwI2vKuDT7z3Go1R5NJ6yGkXR0gyf1r/view?usp=sharing", "_blank");
+                close();
             });
         }
     </script>
