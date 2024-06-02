@@ -17,6 +17,7 @@
                 <td style="padding: 35px; padding-top: 5px;">
                     <pre><code class="language-html" style="user-select: text;">&lt;!-- 發佈日期：25-4-2024 --&gt;
 &lt;!-- 任教老師: 黎老師(代課) --&gt;
+&lt;!-- 重點：認識HTML基本結構 --&gt;
 
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -24,18 +25,47 @@
         &lt;title&gt;EX02&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        Write my html code please!
+        &lt;p&gt;Write my html code please!&lt;/p&gt;
     &lt;/body&gt;
 &lt;/html&gt;
                     </code></pre>
                     <a href="./download/EX02.html" download><button class="layui-btn layui-btn-primary layui-border-red">下載EX02.html</button></a>
                 </td>
-                <th><img src="example/EX02.jpg" style="width: 560; height: 430; position: relative ; padding-top: 5px;"></td>
+                <th><img src="example/EX02.jpg" style="width: 560; height: 430; position: relative ;"></td>
             </tr>
         </table>
-        
-
+        <div class="layui-btn-container" style="padding-left: 32px;">
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-radius" lay-on="func1">&lt;p&gt;</button>
+        </div>
     </body>
 
+    <script>
+        layui.use(
+            function(){
+                var layer = layui.layer;
+                var util = layui.util;
+                util.on(
+                    'lay-on',
+                    {
+                        func1: function(){
+                            var text = '&lt;p&gt;是段落元素，瀏覽器會自動在每個段落元素前後添加一個換行。';
+                            layer.open(
+                                {
+                                    btn: false,
+                                    anim: 5,
+                                    skin: 'layui-layer-lan', 
+                                    area: ['450px', '300px'],
+                                    title: ['&lt;p&gt;','font-size: x-large;'],
+                                    content: `<text-tag style="font-size: large;"> ${text} </text-tag>`,
+                                    closeBtn: 0,
+                                    shadeClose: true,
+                                }
+                            )
+                        }
+                    }
+                )                
+            }
+        )
+    </script>
 
 </html>

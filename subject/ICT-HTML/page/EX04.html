@@ -1,0 +1,80 @@
+<html lang="zh-HK">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+        <link rel="stylesheet" href="../../../layui/css/layui.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+        <script src="../../../layui/layui.js"></script>
+    </head>
+
+    <body style="user-select: none;">
+        
+        <table style="width: 95%;">
+            <tr>
+                <th><text-tag style="font-size: xx-large;">HTML碼</text-tag></th>
+                <th><text-tag style="font-size: xx-large;">成品展示</text-tag></th>
+            </tr>
+            <tr>
+                <td style="padding: 35px; padding-top: 5px;">
+                    <pre><code class="language-html" style="user-select: text;">&lt;!-- 發佈日期：25-4-2024 --&gt;
+&lt;!-- 任教老師: 黎老師(代課) --&gt;
+&lt;!-- 重點：認識錨點元素 --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;EX04&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a href="https://www.ldcwkmss.edu.hk/"&gt;
+            &lt;img src="school_logo.jpg"&gt;
+        &lt;/a&gt;
+        &lt;p&gt;按上圖連至本校網頁&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                    <div class="layui-btn-container">
+                        <a href="./download/EX04.html" download><button class="layui-btn layui-btn-primary layui-border-red">下載EX04.html</button></a>
+                        <a href="./download/school_logo.jpg" download><button class="layui-btn layui-btn-primary layui-border-purple">下載school_logo.jpg</button></a>
+                    </div>
+                </td>
+                <th><img src="example/EX04.jpg" style="width: 560; height: 430; position: relative ; top: -40px;"></td>
+            </tr>
+        </table>
+
+        <div class="layui-btn-container" style="padding-left: 32px;">
+            <!-- <br><br><br> -->
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-radius" lay-on="func1">&lt;a&gt;</button>
+        </div>
+        
+    </body>
+
+    <script>
+        layui.use(
+            function(){
+                var layer = layui.layer;
+                var util = layui.util;
+                util.on(
+                    'lay-on',
+                    {
+                        func1: function(){
+                            var text = '&lt;a&gt;是錨點元素，用於定義<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E9%80%A3%E7%B5%90" target="_blank" title="前往維基百科查看" style="color: blue;">超鏈結<i class="layui-icon layui-icon-search"></i></a>，使頁面鏈接到指定的另一頁面。<br>*href 定義了被鏈接的頁面的位址。';
+                            layer.open(
+                                {
+                                    btn: false,
+                                    anim: 5,
+                                    skin: 'layui-layer-lan', 
+                                    area: ['450px', '300px'],
+                                    title: ['&lt;a&gt;','font-size: x-large;'],
+                                    content: `<text-tag style="font-size: large;"> ${text} </text-tag>`,
+                                    closeBtn: 0,
+                                    shadeClose: true,
+                                }
+                            )
+                        }
+                    }
+                )                
+            }
+        )
+    </script>
+
+</html>
