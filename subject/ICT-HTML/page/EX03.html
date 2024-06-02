@@ -1,0 +1,94 @@
+<html lang="zh-HK">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+        <link rel="stylesheet" href="../../../layui/css/layui.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+        <script src="../../../layui/layui.js"></script>
+    </head>
+
+    <body style="user-select: none;">
+        
+        <table style="width: 95%;">
+            <tr>
+                <th><text-tag style="font-size: xx-large;">HTML碼</text-tag></th>
+                <th><text-tag style="font-size: xx-large;">成品展示</text-tag></th>
+            </tr>
+            <tr>
+                <td style="padding-left: 35px;">
+                    <pre><code class="language-html" style="user-select: text;">&lt;!-- 發佈日期：25-4-2024 --&gt;
+&lt;!-- 任教老師: 黎老師(代課) --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;EX03&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;img src="suppaman.jpg" alt="Suppaman"&gt;
+        &lt;h1&gt;I am Suppaman!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                    <div class="layui-btn-container">
+                        <a href="./download/EX03.html" download><button class="layui-btn layui-btn-primary layui-border-red">下載EX03.html</button></a>
+                        <a href="./download/suppaman.jpg"><button class="layui-btn layui-btn-primary layui-border-purple">下載suppaman.jpg</button></a>
+                    </div>
+                    
+                </td>
+                <th><img src="example/EX03.jpg" style="width: 560; height: 430; position: relative ; padding-top: 10px;"></td>
+            </tr>
+        </table>
+
+        <div class="layui-btn-container" style="padding-left: 32px;">
+            <br><br><br>
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-radius" lay-on="func1">&lt;img&gt;</button>
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-radius" lay-on="func2">&lt;h1&gt;</button>
+        </div>
+
+    </body>
+
+    <script>
+        layui.use(
+            function(){
+                var layer = layui.layer;
+                var util = layui.util;
+                util.on(
+                    'lay-on',
+                    {
+                        func1: function(){
+                            var text = '&lt;img&gt;是圖片元素，用於定義HTML頁面的圖片内容。<br>*src屬性是圖片的位址。<br>*alt屬性是圖片的<a href="https://www.w3school.com.cn/tags/att_img_alt.asp" target="_blank" title="前往W3School查看" style="color: blue;">替代文字<i class="layui-icon layui-icon-search" ></i></a>。';
+                            layer.open(
+                                {
+                                    btn: false,
+                                    anim: 5,
+                                    skin: 'layui-layer-lan', 
+                                    area: ['450px', '300px'],
+                                    title: ['&lt;img&gt;','font-size: x-large;'],
+                                    content: `<text-tag style="font-size: large;"> ${text} </text-tag>`,
+                                    closeBtn: 0,
+                                    shadeClose: true,
+                                }
+                            )
+                        },
+                        func2: function(){
+                            var text = '&lt;h1&gt;是<a href="https://www.w3school.com.cn/tags/tag_hn.asp" target="_blank" title="前往W3School查看" style="color: blue;">標題元素<i class="layui-icon layui-icon-search" ></i></a>之一，用於定義HTML頁面中最主要的標題内容。';
+                            layer.open(
+                                {
+                                    btn: false,
+                                    anim: 5,
+                                    skin: 'layui-layer-lan', 
+                                    area: ['450px', '300px'],
+                                    title: ['&lt;h1&gt;','font-size: x-large;'],
+                                    content: `<text-tag style="font-size: large;"> ${text} </text-tag>`,
+                                    closeBtn: 0,
+                                    shadeClose: true,
+                                }
+                            )
+                        }
+                    }
+                )                
+            }
+        )
+    </script>
+
+</html>
