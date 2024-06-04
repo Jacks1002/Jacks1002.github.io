@@ -28,14 +28,14 @@
                 </td>
 
                 <td style="width: 34%;">
-                    <a href="#" onclick="layui.layer.msg('敬请期待！', {icon: 2, anim: 1})">
-                        <img src="../image/math.png" alt="math" style="width: 256px; height: 256px"><br>
-                        <h3 style="color: red;">Math</h3>
+                    <a href="#" onclick="gotodrive('F4歷届試卷(期末考)', 'https://drive.google.com/drive/folders/1QQYOWgzAvfjN2KB6l9ZKEZMMlhGS08Qh?usp=sharing')">
+                        <img src="../image/exam.png" alt="math" style="width: 256px; height: 256px"><br>
+                        <h3>F4歷届試卷(期末考)</h3>
                     </a>
                 </td>
 
                 <td>
-                    <a href="#" onclick="gotodrive()">
+                    <a href="#" onclick="gotodrive('死神vs火影游戲包', 'https://drive.google.com/file/d/1gGwI2vKuDT7z3Go1R5NJ6yGkXR0gyf1r/view?usp=sharing')">
                         <img src="../image/死神vs火影.png" alt=" 死神vs火影" style="width: 256px; height: 256px"><br>
                         <h3>死神vs火影</h3>
                     </a>
@@ -46,9 +46,9 @@
     </body>
     <script>
         const layer = layui.layer;
-        function gotodrive() {
+        function gotodrive(name, link) {
             layer.confirm(
-                '是否前往Google雲端硬碟下載游戲包？',
+                `是否前往Google雲端硬碟查看 ${name} ？`,
                 {
                     icon: 3,
                     btn: ['前往', '取消'],
@@ -64,8 +64,10 @@
                             anim: '1',
                         },
                     );
-                    window.open("https://drive.google.com/file/d/1gGwI2vKuDT7z3Go1R5NJ6yGkXR0gyf1r/view?usp=sharing", "_blank");
-                    layer.close();
+
+                    setTimeout(function() {
+                        window.open(link, "_blank");
+                    }, 1000);
                 },
 
                 function() { // 點擊取消
@@ -76,7 +78,6 @@
                             anim: '1',
                         }
                     );
-                    layer.close();
                 }
             );
         }
