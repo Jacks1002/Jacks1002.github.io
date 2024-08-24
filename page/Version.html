@@ -10,11 +10,13 @@
             
     </style>
     <body>
-        <h5 style="color: red;text-align: center; caret-color: transparent;user-select: none;" onclick="showinfo(this)">- Version 2.0.6 -</h5>	
+        <h5 style="color: red;text-align: center; caret-color: transparent;user-select: none;" onclick="showinfo(this)">- Version 2.0.7 -</h5>	
     </body>
 
     <script src="../layui/layui.js"></script>
     <script>
+        const version = "2.0.7";
+
         const layer = layui.layer;
         let x = y = 0
         function showinfo(id) {
@@ -22,16 +24,16 @@
             y += 1
             switch (x) {
                 case 1:
-                    id.innerHTML = "- 2.0.6 Version -"
+                    id.innerHTML = `- ${version} Version -`
                     break;
                 case 2:
-                    id.innerHTML = "- 版本 2.0.6 -"
+                    id.innerHTML = `- 版本 ${version} -`
                     break;
                 case 3:
-                    id.innerHTML = "- 2.0.6 版本 -"
+                    id.innerHTML = `- ${version} 版本 -`
                     break;
                 default:
-                    id.innerHTML = "- Version 2.0.6 -"
+                    id.innerHTML = `- Version ${version} -`
                     x = 0
             }
 
@@ -43,7 +45,7 @@
                     title: '彩蛋',
                     shade: 0.5,
                     anim: 2,
-                    content: '<div style="padding: 35"><pre>恭喜你發現了彩蛋~\n你的獎勵是一隻鷄腿~\n請記得找我兌獎哦~\n先到先得~\n獲獎者： 暫無\n\n\n本站始於2024年4月14日~\n本站目前版本為 2.0.6 ~</pre></div>'
+                    content: `<div style="padding: 35"><pre>恭喜你發現了彩蛋~\n你的獎勵是一隻鷄腿~\n請記得找我兌獎哦~\n先到先得~\n獲獎者： 暫無\n\n\n本站始於2024年4月14日~\n本站目前版本為 ${version} ~</pre></div>`
                 });
             }
         }
