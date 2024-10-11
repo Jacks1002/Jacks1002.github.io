@@ -57,10 +57,106 @@
     </div>
 
     <script>
+        const holidays = [
+            {
+                year: 2024,
+                month: 9,
+                days: [18]
+            },
+            {
+                year: 2024,
+                month: 10,
+                days: [10,11]
+
+            },
+            {
+                year: 2024,
+                month: 11,
+                days: [18]
+            },
+            { 
+                year: 2024, 
+                month: 12, 
+                days: [6], 
+                ranges: [ // 使用数组来支持多个日期范围
+                    { start: 23, end: 31 }
+                ] 
+            },
+            {
+                year: 2025,
+                month: 1,
+                ranges: [
+                    { start: 1, end: 2 },
+                    { start: 27, end: 31 }
+                ]
+            },
+            {
+                year: 2025,
+                month: 2,
+                ranges: [
+                    { start: 1, end: 5 }
+                ]
+            },
+            {
+                year: 2025,
+                month: 4,
+                days: [4],
+                ranges: [
+                    { start: 15, end: 26 }
+                ]
+            },
+            {
+                year: 2025,
+                month: 5,
+                days: [1,5,31]
+            },
+            {
+                year: 2025,
+                month: 6,
+                days: [9]
+            },
+            {
+                year: 2025,
+                month: 7,
+                days: [1],
+                ranges: [
+                    { start: 21, end: 31 }
+                ]
+            },
+            {
+                month: 8,
+                ranges: [
+                    { start: 1, end: 31 }
+                ]
+            }
+        ];
+
+        function isHoliday(date) {
+            return holidays.some(holiday => {
+                const isInYear = holiday.year === undefined || holiday.year === date.getFullYear();
+                const isInMonth = holiday.month === date.getMonth() + 1;
+
+                const isIndays = holiday.days && 
+                    holiday.days.includes(date.getDate());
+
+                const isInDateRange = holiday.ranges && 
+                    holiday.ranges.some(range => 
+                        date.getDate() >= range.start && date.getDate() <= range.end
+                    );
+
+                return isInYear && isInMonth && (isIndays || isInDateRange);
+            });
+        }
+
         function getCurrentDay() {
             const cycleLength = 10;
             const startDate = new Date(2024, 9, 2); // 修改为你的课程开始日期（年, 月-1, 日）
             const today = new Date();
+
+            // 检查今天是否是假期
+            if (isHoliday(today)) {
+                return "😀今天是假期，不用上学😀";
+            }
 
             // 显示今天的日期
             document.getElementById('date').innerText = `今天是 ${today.toLocaleDateString()}`;
@@ -83,7 +179,7 @@
 
                 return `DAY${currentDay}\n高中早會：<span class="${hasMorningMeeting === '是' ? 'yes' : 'no'}">${hasMorningMeeting}</span>\n初中早會：<span class="${hasJuniorMorningMeeting === '是' ? 'yes' : 'no'}">${hasJuniorMorningMeeting}</span>\n體育課：<span class="${hasPEClass === '是' ? 'yes' : 'no'}">${hasPEClass}</span>`;
             } else {
-                return "今天不是上課日";
+                return "😁今天不是上課日😁";
             }
         }
 
