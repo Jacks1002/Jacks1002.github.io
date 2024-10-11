@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5AC班課程表</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+        #result {
+            font-size: 1.2em;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        .yes {
+            color: #28a745; /* 绿色 */
+            font-weight: bold;
+        }
+        .no {
+            color: #dc3545; /* 红色 */
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5AC班課程表</h1>
+        <div id="date"></div>
+        <div id="result"></div>
+        <div class="footer">© 牛馬村計算機有限公司</div>
+    </div>
+
+    <script>
+        function getCurrentDay() {
+            const cycleLength = 10;
+            const startDate = new Date(2024, 9, 2); // 修改为你的课程开始日期（年, 月-1, 日）
+            const today = new Date();
+
+            // 显示今天的日期
+            document.getElementById('date').innerText = `今天是 ${today.toLocaleDateString()}`;
+
+            // 计算从起始日期到今天的天数
+            const daysPassed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+            const totalWeeksPassed = Math.floor(daysPassed / 7);
+            const weekday = today.getDay(); // 0: Sunday, 1: Monday, ..., 6: Saturday
+
+            if (weekday >= 1 && weekday <= 5) { // 只有周一到周五是上课日
+                // 计算当前循环内的具体天数
+                const currentDay = (totalWeeksPassed * 5 + (weekday - 1)) % cycleLength + 1;
+
+                // 判断是否有早會和体育课
+                const hasMorningMeeting = (currentDay === 2 || currentDay === 6 || currentDay === 7) ? '是' : '否';
+                const hasPEClass = (weekday === 4) ? '是' : '否';
+
+                // 判断初中早會
+                const hasJuniorMorningMeeting = (currentDay === 1 || currentDay === 4 || currentDay === 9) ? '是' : '否';
+
+                return `DAY${currentDay}\n高中早會：<span class="${hasMorningMeeting === '是' ? 'yes' : 'no'}">${hasMorningMeeting}</span>\n初中早會：<span class="${hasJuniorMorningMeeting === '是' ? 'yes' : 'no'}">${hasJuniorMorningMeeting}</span>\n體育課：<span class="${hasPEClass === '是' ? 'yes' : 'no'}">${hasPEClass}</span>`;
+            } else {
+                return "今天不是上課日";
+            }
+        }
+
+        // 显示结果
+        document.getElementById('result').innerHTML = getCurrentDay().replace(/\n/g, '<br>');
+    </script>
+</body>
+</html>
