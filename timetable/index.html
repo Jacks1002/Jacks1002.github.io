@@ -58,77 +58,17 @@
 
     <script>
         const holidays = [
-            {
-                year: 2024,
-                month: 9,
-                days: [18]
-            },
-            {
-                year: 2024,
-                month: 10,
-                days: [10,11]
-
-            },
-            {
-                year: 2024,
-                month: 11,
-                days: [18]
-            },
-            { 
-                year: 2024, 
-                month: 12, 
-                days: [6], 
-                ranges: [ // 使用数组来支持多个日期范围
-                    { start: 23, end: 31 }
-                ] 
-            },
-            {
-                year: 2025,
-                month: 1,
-                ranges: [
-                    { start: 1, end: 2 },
-                    { start: 27, end: 31 }
-                ]
-            },
-            {
-                year: 2025,
-                month: 2,
-                ranges: [
-                    { start: 1, end: 5 }
-                ]
-            },
-            {
-                year: 2025,
-                month: 4,
-                days: [4],
-                ranges: [
-                    { start: 15, end: 26 }
-                ]
-            },
-            {
-                year: 2025,
-                month: 5,
-                days: [1,5,31]
-            },
-            {
-                year: 2025,
-                month: 6,
-                days: [9]
-            },
-            {
-                year: 2025,
-                month: 7,
-                days: [1],
-                ranges: [
-                    { start: 21, end: 31 }
-                ]
-            },
-            {
-                month: 8,
-                ranges: [
-                    { start: 1, end: 31 }
-                ]
-            }
+            { year: 2024, month: 9, days: [18] },
+            { year: 2024, month: 10, days: [10, 11] },
+            { year: 2024, month: 11, days: [18] },
+            { year: 2024, month: 12, days: [6], ranges: [{ start: 23, end: 31 }] },
+            { year: 2025, month: 1, ranges: [{ start: 1, end: 2 }, { start: 27, end: 31 }] },
+            { year: 2025, month: 2, ranges: [{ start: 1, end: 5 }] },
+            { year: 2025, month: 4, days: [4], ranges: [{ start: 15, end: 26 }] },
+            { year: 2025, month: 5, days: [1, 5, 31] },
+            { year: 2025, month: 6, days: [9] },
+            { year: 2025, month: 7, days: [1], ranges: [{ start: 21, end: 31 }] },
+            { month: 8, ranges: [{ start: 1, end: 31 }] }
         ];
 
         function isHoliday(date) {
