@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StarWeb | Softwares</title>
+    <link rel="stylesheet" href="../css.css">
+    <link rel="icon" href="../icon.png">
+</head>
+<body>
+<h1>
+    <p>Index of StarWeb/Softwares</p>
+</h1>
+<pre>Name                   Information</pre>
+<hr>
+<pre><a href="../index.html">../</a>
+<a href="pcl2/index.html" target = "_blank"
+                                                             onclick="handleLinkUrl(this)">PCL2</a>                   A Launcher of Minecraft
+<a href="bvn/index.html" target = "_blank"
+                                                             onclick="handleLinkUrl(this)">BVN</a>                    Bleach vs. Naruto
+<a href="smt/index.html" target = "_blank"
+                                                             onclick="handleLinkUrl(this)">SMT</a>                    Simple Mysql Terminal (Original)
+</pre>
+<hr>
+<address style="font-size: small;">
+    Services from CowHorse Village Computer Limited Company
+</address>
+<script type="text/javascript">
+    function handleLinkUrl(element) {
+        var value = element.getAttribute("href");
+        element.setAttribute("href", encodeURI(value));
+    }
+</script>
+</body>
+</html>
